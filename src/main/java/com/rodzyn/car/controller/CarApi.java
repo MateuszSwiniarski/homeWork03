@@ -22,15 +22,6 @@ package com.rodzyn.car.controller;
 @RequestMapping("/cars")
 public class CarApi extends RepresentationModel<Car> {
 
-//    private List<Car> carList;
-
-//    public CarApi() {
-//        this.carList = new ArrayList<>();
-//        carList.add(new Car(1L, "audi", "A5", "black"));
-//        carList.add(new Car(2L, "prosche", "911", "red"));
-//        carList.add(new Car(3L, "bmw", "i8", "red"));
-//    }
-
     private CarServiceImp carServiceImp;
 
     @Autowired
