@@ -32,13 +32,13 @@ public class CarServiceImp implements CarService {
 
     @Override
     public List<Car> getCarByColor(String color) {
-        List<Car> colorCar = getCars().stream().filter(car -> car.getColor().equals(color)).collect(Collectors.toList());
+        List<Car> colorCar = carList.stream().filter(car -> car.getColor().equals(color)).collect(Collectors.toList());
         return colorCar;
     }
 
     @Override
     public List<Car> getCarByMark(String mark) {
-        List<Car> markCar = getCars().stream().filter(car -> car.getMark().equals(mark)).collect(Collectors.toList());
+        List<Car> markCar = carList.stream().filter(car -> car.getMark().equals(mark)).collect(Collectors.toList());
         return markCar;
     }
 
@@ -49,12 +49,12 @@ public class CarServiceImp implements CarService {
 
     @Override
     public Optional<Car> modCar(Car newCar) {
-        Optional<Car> first = getCars().stream().filter(car -> car.getId() == newCar.getId()).findFirst();
+        Optional<Car> first = carList.stream().filter(car -> car.getId() == newCar.getId()).findFirst();
         return first;
     }
 
     @Override
     public boolean removeCar(Car car) {
-        return getCars().remove(car);
+        return carList.remove(car);
     }
 }
